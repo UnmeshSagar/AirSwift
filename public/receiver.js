@@ -2,6 +2,8 @@
     let sender_uid;
     const socket = io();
 
+
+
     function generateID(){
         return `${Math.trunc(Math.random()*999)}-${Math.trunc(Math.random()*999)}-${Math.trunc(Math.random()*999)}`;
     }
@@ -16,6 +18,7 @@
         socket.emit("receiver-join",{
             sender_uid:sender_uid,
             uid:joinID
+           
         });
         document.querySelector(".join-screen").classList.remove("active");
         document.querySelector(".fs-screen").classList.add("active");
